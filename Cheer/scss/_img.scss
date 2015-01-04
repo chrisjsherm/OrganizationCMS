@@ -1,0 +1,47 @@
+﻿.img-container {
+    position: relative;
+    height: 0;
+    background-color: $white;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .caption-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $black;
+        color: $white;
+        opacity: 0.75;
+        width: 100%;
+    }
+
+    .caption-content {
+        padding: emCalc(10px);
+        margin: 0;
+    }
+}
+
+$ratio-feature-image: percentage(1163/2000);
+$ratio-1-1: 100%;
+
+.ratio-feature-image {
+    padding-bottom: $ratio-feature-image;
+}
+
+.ratio-1-1 {
+    padding-bottom: 100%;
+}
+
+.feature-image {
+    margin-bottom: emCalc(20px);
+}
+
+.profile-image {
+    margin-bottom: 0.9375em;
+}

@@ -1,0 +1,79 @@
+﻿.bio-panel {
+    @extend .panel;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: emCalc(15px);
+    }
+
+    .button {
+        @extend .button;
+        margin-bottom: 0;
+    }
+}
+
+.panel-box {
+	background-color: #fff;
+    border: #ddd 1px solid;
+    border-top: #FF6600 2px solid;
+    color: #777;
+    margin-bottom: 25px;
+    padding: 15px;
+
+	i {
+        color: #777;
+    }
+
+	img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.9em;
+    }
+
+    p {
+        margin-bottom: 0 !important;
+    }
+
+	ul {
+        margin-bottom: 0;
+    }
+}
+
+.latest-updates {
+    .panel {
+        @extend .panel;
+        border-top: solid emCalc(3px) $tuatara;
+        margin-bottom: 0.1em;
+    }
+
+    .article-panel {
+        @extend .panel;
+        margin-bottom: 0.1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        h5 {
+            margin: 0;
+        }
+    }
+}
+
+.logo-panel {
+    @extend .panel;
+
+    h3 {
+        text-align: center;
+        margin-bottom: emCalc(20px);
+    }
+
+    li {
+        margin-bottom: emCalc(12px);
+
+        li {
+            margin-bottom: 0;
+        }
+    }
+}
