@@ -43,36 +43,7 @@
 
     </script>
 
-    <div class="contain-to-grid">
-        <nav class="top-bar" data-topbar data-options="sticky_on: large" role="navigation">
-            <ul class="title-area">
-
-                <li class="name">
-                    <h1>
-                        <a href="/">
-                            @Umbraco.Field("siteName", recursive: true)
-                        </a>
-                    </h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-            </ul>
-
-            <section class="top-bar-section">
-
-                <ul class="right">
-                    <li class="divider"></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/about">About</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </section>
-        </nav>
-    </div>
+    @{ Html.RenderPartial("NavigationBar"); }
 
     <section class="main-content">
         @RenderBody()

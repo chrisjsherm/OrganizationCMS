@@ -3,39 +3,32 @@
 <footer>
     <div class="row footer">
         <div class="small-12 medium-4 large-4 columns">
-            <img class="left" data-interchange="[@Umbraco.Field("footerPortraitPhotoLarge", recursive: true), (default)], [@Umbraco.Field("footerPortraitPhoto2x", recursive: true), (retina)]"
-                 alt="Portrait" height="100" width="100">
-
-            <noscript>
-                <img class="left" src="@Umbraco.Field("footerPortraitPhoto2x", recursive: true)" alt="Portrait" height="100" width="100">
-            </noscript>
-
             @Umbraco.Field("footerSummary", recursive: true)
         </div>
         <div class="small-12 medium-4 large-4 columns">
             <ul class="fa-ul">
                 <li>
-                    <i class="fa-li fa fa-linkedin fa-2x"></i>
+                    <i class="fa-li fa fa-facebook fa-2x"></i>
                     <span>
-                        Connect with me on
-                        <a href="@Umbraco.Field("linkedinLink", recursive: true)">LinkedIn</a>
-                        to discover common connections
+                        Connect with us on 
+                        <a href="@Umbraco.Field("facebookURL", recursive: true)">Facebook</a>
+                        to keep up with the latest news and competitions
                     </span>
                 </li>
                 <li>
-                    <i class="fa-li fa fa-github fa-2x"></i>
+                    <i class="fa-li fa fa-twitter fa-2x"></i>
                     <span>
-                        View
-                        <a href="@Umbraco.Field("githubLink", recursive: true)">Github</a>
-                        to browse the source code of my open source projects
+                        Follow us on 
+                        <a href="@Umbraco.Field("twitterURL", recursive: true)">Twitter</a>
+                        for updates throughout the year
                     </span>
                 </li>
                 <li>
-                    <i class="fa-li fa fa-stack-overflow fa-2x"></i>
+                    <i class="fa-li fa fa-instagram fa-2x"></i>
                     <span>
-                        Visit
-                        <a href="@Umbraco.Field("stackoverflowLink", recursive: true)">StackOverflow</a>
-                        to see my contributions to the programming community
+                        Check us out on 
+                        <a href="@Umbraco.Field("stackoverflowLink", recursive: true)">Instagram</a>
+                        as we compete up and down the East Coast
                     </span>
                 </li>
             </ul>

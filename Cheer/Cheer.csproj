@@ -307,6 +307,9 @@
     <Content Include="scss\_banner.scss" />
     <Content Include="scss\_call-to-action.scss" />
     <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\NavigationBar.cshtml" />
+    <Content Include="Views\Partials\PageHeading.cshtml" />
+    <Content Include="Views\Information.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,36 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var homePage = Umbraco.TypedContentSingleAtXPath("//Home");
+    var menuItems = homePage.Children
+        .Where("IncludeInNavigation");
+}
+
+<div class="contain-to-grid">
+    <nav class="top-bar" data-topbar data-options="sticky_on: large" role="navigation">
+        <ul class="title-area">
+
+            <li class="name">
+                <h1>
+                    <a href="/">
+                        @Umbraco.Field("siteName", recursive: true)
+                    </a>
+                </h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+
+            <ul class="right">
+                @foreach (var item in menuItems)
+                {
+                    <li class="divider"></li>
+                    <li><a href="@item.Url">@item.Name</a></li>
+                    <li class="divider"></li>
+                }
+            </ul>
+        </section>
+
+    </nav>
+</div>

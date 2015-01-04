@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = "_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("PageHeading"); }
+
+<div class="row">
+    <div class="large-12 columns">
+        <h3>@Umbraco.Field("FirstSectionHeading")</h3>
+
+        @Umbraco.Field("FirstSection")
+    </div>
+</div>
+
+<div class="panel">
+
+    <div class="row">
+        <div class="large-8 columns">
+            <h3>@Umbraco.Field("CalloutSectionHeading")</h3>
+
+            @Umbraco.Field("CalloutSection")
+        </div>
+
+        <div class="large-4 columns">
+            <div class="panel-box">
+                <h4>@Umbraco.Field("CalloutPanelHeading")</h4>
+
+                @Umbraco.Field("CalloutPanel")
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    if (CurrentPage.HasValue("SecondSectionHeading"))
+    {
+        <div class="row">
+            <div class="large-12 columns">
+                <h3>@Umbraco.Field("SecondSectionHeading")</h3>
+
+                @Umbraco.Field("SecondSection")
+            </div>
+        </div>
+    }
+}

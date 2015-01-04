@@ -110,7 +110,9 @@
                         @foreach (var item in coachNode.Children.Where("Visible"))
                         {
                             <li>
-                                @item.PersonName
+                                <strong>
+                                    @item.PersonName
+                                </strong>
                             </li>
                         }
                     </ul>
