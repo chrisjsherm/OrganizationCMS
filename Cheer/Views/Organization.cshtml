@@ -2,3 +2,39 @@
 @{
     Layout = "_Layout.cshtml";
 }
+@{ Html.RenderPartial("PageHeading"); }
+
+<div class="row">
+    <div class="small-12 large-12 columns">
+        @{
+            var members = Umbraco.TypedContentAtXPath("//OrganizationMember")
+                .Where(m => m.GetPropertyValue<string>("Position") != "Coach");
+        }
+
+        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            @foreach (var item in members)
+            {
+                <li>
+                    <div class="panel-box">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                @if (item.HasValue("ProfilePhoto"))
+                                {
+                                    <img src="@item.GetPropertyValue("ProfilePhoto")" />
+                                }
+                                <h5 class="text-center">
+                                    @item.GetPropertyValue("FirstName") @item.GetPropertyValue("LastName")
+                                </h5>
+
+                                @if (item.HasValue("HomeTown"))
+                                {
+                                    <p class="text-center">@item.GetPropertyValue("HomeTown")</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

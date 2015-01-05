@@ -310,6 +310,8 @@
     <Content Include="Views\Partials\NavigationBar.cshtml" />
     <Content Include="Views\Partials\PageHeading.cshtml" />
     <Content Include="Views\Information.cshtml" />
+    <Content Include="Views\OrganizationMember.cshtml" />
+    <Content Include="Views\Organization.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
