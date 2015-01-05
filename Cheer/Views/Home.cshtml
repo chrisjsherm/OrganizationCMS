@@ -75,43 +75,39 @@
             <h4>OFFICERS</h4>
 
             @{
-                var officerNodeReference = Umbraco.TypedSearch("Officers").SingleOrDefault();
+                var organizationNodeRef = Umbraco.TypedContentSingleAtXPath("//Organization");
+                var officers = organizationNodeRef.Children
+                    .Where("IsOfficer");
 
-                if (officerNodeReference != null)
-                {
-                    var officerNode = Umbraco.Content(officerNodeReference.Id);
+                <ul>
+                    @foreach (var item in officers.Where("Visible"))
+                    {
+                        <li>
+                            <strong>@item.GetPropertyValue("Position") </strong>
 
-                    <ul>
-                        @foreach (var item in officerNode.Children.Where("Visible"))
-                        {
-                            <li>
-                                <strong>@item.Position </strong>
-
-                                <a href="mailto:@item.PersonEmailAddress?subject=Virginia Tech Competitive Cheerleading | Contact Us">
-                                    @item.PersonName
-                                </a>
-                            </li>
-                        }
-                    </ul>
-                }
+                            <a href="mailto:@item.GetPropertyValue("EmailAddress")?subject=Virginia Tech Competitive Cheerleading | Contact Us">
+                                @item.GetPropertyValue("FirstName") @item.GetPropertyValue("LastName")
+                            </a>
+                        </li>
+                    }
+                </ul>
             }
 
             <br />
             <h4>COACHES</h4>
 
             @{
-                var coachNodeReference = Umbraco.TypedSearch("Coaches").SingleOrDefault();
+                var coachNode = Umbraco.TypedSearch("Coach");
 
-                if (coachNodeReference != null)
+                if (coachNode != null)
                 {
-                    var coachNode = Umbraco.Content(coachNodeReference.Id);
-
                     <ul>
-                        @foreach (var item in coachNode.Children.Where("Visible"))
+                        @foreach (var item in coachNode
+                            .Where(n => n.GetPropertyValue("FirstName") != null))
                         {
                             <li>
                                 <strong>
-                                    @item.PersonName
+                                    @item.GetPropertyValue("FirstName") @item.GetPropertyValue("LastName")
                                 </strong>
                             </li>
                         }

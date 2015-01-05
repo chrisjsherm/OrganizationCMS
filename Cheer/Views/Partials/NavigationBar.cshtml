@@ -21,16 +21,19 @@
         </ul>
 
         <section class="top-bar-section">
-
-            <ul class="right">
-                @foreach (var item in menuItems)
-                {
+            @if (menuItems.Count() > 0)
+            {
+                <ul class="right">
                     <li class="divider"></li>
-                    <li><a href="@item.Url">@item.Name</a></li>
-                    <li class="divider"></li>
-                }
-            </ul>
+                    @foreach (var item in menuItems)
+                    {
+                        <li><a href="@item.Url">@item.Name</a></li>
+                        <li class="divider"></li>
+                    }
+                </ul>
+            }
         </section>
 
     </nav>
+
 </div>

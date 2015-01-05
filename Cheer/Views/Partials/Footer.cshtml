@@ -10,25 +10,19 @@
                 <li>
                     <i class="fa-li fa fa-facebook fa-2x"></i>
                     <span>
-                        Connect with us on 
-                        <a href="@Umbraco.Field("facebookURL", recursive: true)">Facebook</a>
-                        to keep up with the latest news and competitions
+                        @Umbraco.Field("facebookBlurb", recursive: true, removeParagraphTags: true)
                     </span>
                 </li>
                 <li>
                     <i class="fa-li fa fa-twitter fa-2x"></i>
                     <span>
-                        Follow us on 
-                        <a href="@Umbraco.Field("twitterURL", recursive: true)">Twitter</a>
-                        for updates throughout the year
+                        @Umbraco.Field("twitterBlurb", recursive: true, removeParagraphTags: true)
                     </span>
                 </li>
                 <li>
                     <i class="fa-li fa fa-instagram fa-2x"></i>
                     <span>
-                        Check us out on 
-                        <a href="@Umbraco.Field("stackoverflowLink", recursive: true)">Instagram</a>
-                        as we compete up and down the East Coast
+                        @Umbraco.Field("instagramBlurb", recursive: true, removeParagraphTags:true)
                     </span>
                 </li>
             </ul>
