@@ -312,6 +312,7 @@
     <Content Include="Views\Information.cshtml" />
     <Content Include="Views\OrganizationMember.cshtml" />
     <Content Include="Views\Organization.cshtml" />
+    <Content Include="Views\Schedule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
