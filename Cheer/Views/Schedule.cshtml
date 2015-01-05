@@ -7,44 +7,67 @@
 
 <div class="row">
     <div class="large-12 columns">
+
         @{
-            var events = Umbraco.TypedContentAtXPath("//Event")
-                .Where("Visible");
+            var upcomingEvents = Model.Content.Descendants()
+                .Where("EventStartDate >= DateTime.Now.Date")
+                .OrderBy("EventStartDate");
+
+            var pastEvents = Model.Content.Descendants()
+                .Where("EventStartDate < DateTime.Now.Date")
+                .OrderByDescending(e => e.GetPropertyValue("EventStartDate"));
+
         }
 
-        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
-            @foreach (var item in events)
-            {
-                <li>
-                    <div class="panel-box">
-                        @if (item.HasValue("EventLogo"))
-                        {
-                            <img src="@item.GetPropertyValue("EventLogo")" />
-                        }
-                        <h4>
-                            @item.GetPropertyValue("EventName")
-                        </h4>
+        @if (upcomingEvents.Count() > 0)
+        {
+            <h3>Upcoming Events</h3>
 
-                        <h6>
-                            <strong>
-                                @item.GetPropertyValue("EventDate")
-                            </strong>
-                        </h6>
+            @PrintEvents(upcomingEvents)
+        }
 
-                        <h6>
-                            @item.GetPropertyValue("EventLocation")
-                        </h6>
+        @if (pastEvents.Count() > 0)
+        {
+            <h3>Past Events</h3>
 
-                        @if (item.HasValue("AdditionalInformation"))
-                        {
-                            <p>
-                                @item.GetPropertyValue("AdditionalInformation")
-                            </p>
-                        }
-                    </div>
-                </li>
-            }
-        </ul>
+            @PrintEvents(pastEvents)
+        }
     </div>
-
 </div>
+
+@helper PrintEvents(IQueryable<IPublishedContent> events)
+{
+    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
+        @foreach (var item in events)
+        {
+            <li>
+                <div class="panel-box">
+                    @if (item.HasValue("EventLogo"))
+                    {
+                        <img src="@item.GetPropertyValue("EventLogo")" />
+                    }
+                    <h4>
+                        @item.GetPropertyValue("EventName")
+                    </h4>
+
+                    <h6>
+                        <strong>
+                            @item.GetPropertyValue("EventDate")
+                        </strong>
+                    </h6>
+
+                    <h6>
+                        @item.GetPropertyValue("EventLocation")
+                    </h6>
+
+                    @if (item.HasValue("AdditionalInformation"))
+                    {
+                        <p>
+                            @item.GetPropertyValue("AdditionalInformation")
+                        </p>
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+}

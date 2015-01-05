@@ -11,6 +11,7 @@ app.Release.config
 main-built.js
 *.mdf
 *.ldf
+Cheer/media/
 # ==========================
 # End custom: private config files
 # ==========================
