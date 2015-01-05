@@ -22,14 +22,15 @@ namespace Cheer.App_Start
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/scripts/modernizrlib").Include(
-                        "~/scripts/jquery/modernizr/modernizr.js"));
+                        "~/scripts/modernizr/modernizr.js"));
 
             bundles.Add(
                 new ScriptBundle("~/scripts/vendor")
-                  .Include("~/scripts/jquery/dist/jquery.min.js")
+                  .Include("~/scripts/jquery/dist/jquery.js")
                   .Include("~/scripts/fastclick/lib/fastclick.js")
                   .Include("~/scripts/foundation/js/foundation/foundation.js")
                   .Include("~/scripts/foundation/js/foundation/foundation.abide.js")
+                  .Include("~/scripts/foundation/js/foundation/foundation.clearing.js")
                   .Include("~/scripts/foundation/js/foundation/foundation.interchange.js")
                   .Include("~/scripts/foundation/js/foundation/foundation.topbar.js")
                   .Include("~/scripts/app.js")

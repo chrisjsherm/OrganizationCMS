@@ -9,11 +9,11 @@
     <div class="large-12 columns">
 
         @{
-            var upcomingEvents = Model.Content.Descendants()
+            var upcomingEvents = Model.Content.Children
                 .Where("EventStartDate >= DateTime.Now.Date")
                 .OrderBy("EventStartDate");
 
-            var pastEvents = Model.Content.Descendants()
+            var pastEvents = Model.Content.Children
                 .Where("EventStartDate < DateTime.Now.Date")
                 .OrderByDescending(e => e.GetPropertyValue("EventStartDate"));
 

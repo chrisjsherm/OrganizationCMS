@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_Layout.cshtml";
+}
+
+@{ Html.RenderPartial("PageHeading"); }
+
+@{
+    /* Umbraco advised method for accessing drop down values
+     * uses magic string, so store in Web.Config.
+     * http://our.umbraco.org/wiki/reference/umbracolibrary/getprevalues
+     */
+    var iterator = umbraco.library.GetPreValues(Int32.Parse(
+        System.Web.Configuration.WebConfigurationManager.AppSettings["seasonDropdownNodeId"]));
+
+    // Move to first item.
+    iterator.MoveNext();
+
+    var values = iterator.Current.SelectChildren("preValue", "");
+
+    foreach (var item in values)
+    {
+        var photoCollection = Model.Content.Children
+            .Where(p => p.GetPropertyValue("PhotoSeason").ToString() == item.ToString());
+
+        if (photoCollection.Count() > 0)
+        {
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>@item</h3>
+
+                    <ul class="clearing-thumbs" data-clearing>
+                        @foreach (var photo in photoCollection)
+                        {
+                            <li>
+                                <a class="th" href="@photo.GetPropertyValue("PhotoFile")">
+                                    <img data-caption="@photo.GetPropertyValue("PhotoCaption")"
+                                         src="@photo.GetPropertyValue("PhotoFile").ToString().Replace(".", "_200.")"
+                                         height="100" width="100" />
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
+}
