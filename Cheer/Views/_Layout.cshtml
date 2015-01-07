@@ -49,6 +49,29 @@
         @RenderBody()
     </section>
 
+    <div class="call-to-action">
+        <div class="row">
+            <div class="small-12 large-10 columns">
+                <h3>
+                    @Umbraco.Field("CallToActionHeading", recursive: true)
+
+                    <strong>
+                        @Umbraco.Field("CallToActionHeadingEmphasis", recursive: true)
+                    </strong>
+                </h3>
+
+                @Umbraco.Field("CallToAction", recursive: true)
+            </div>
+
+
+
+            <div class="large-4 columns hide-for-small">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+
+
     @{ Html.RenderPartial("Footer"); }
 
     @Scripts.Render("~/scripts/vendor")

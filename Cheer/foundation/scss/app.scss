@@ -1,7 +1,12 @@
 // Font Awesome.
 @import "../bower_components/components-font-awesome/scss/font-awesome.scss";
 
+// App settings.
+@import "../../scss/settings.scss";
+
+// Foundation settings.
 @import "settings";
+
 @import "foundation";
 
 // Or selectively include components
@@ -41,8 +46,6 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
-
-@import "../../scss/settings.scss";
 
 @import "../../scss/banner",
     "../../scss/call-to-action",

@@ -19,7 +19,7 @@
 	}
 
 	a {
-		background: #FF6600;
+		background: $hokie-orange;
 		color: #fff;
 		display: inline-block;
 		padding: 5px 10px;
@@ -27,7 +27,7 @@
 
 	h1 {
 		margin: 0;
-		background: #660000;
+		background: $hokie-maroon;
 		color: #fff;
 		padding: 5px 10px;
 	}
@@ -35,7 +35,7 @@
 	h3 {
 		margin: 0;
 
-			background: #1a1a1a;
+			background: $footer-bg;
 			color: #fff;
 			padding: 5px 10px;
 
@@ -47,7 +47,7 @@
 }
 
 .banner-follow {
-	background: #1a1a1a;
+	background: $footer-bg;
 	color: #fff;
 	display: block;
 	margin-bottom: 40px;
@@ -60,7 +60,7 @@
 	
 
 .title-banner {
-    background: #333;
+    background: $oil;
     color: #fff;
     margin-bottom: 1.25em;
     padding: 15px 0;
