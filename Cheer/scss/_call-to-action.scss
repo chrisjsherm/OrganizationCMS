@@ -1,7 +1,7 @@
 .call-to-action {
     background: $hokie-maroon;
     color: #fff;
-    padding: 25px 0;
+    padding: emCalc(25px) 0;
 
 	h3, a {
 		color: #FFF;
@@ -15,6 +15,10 @@
 			text-decoration: none;
 		}
 	}
+
+    p {
+        margin-bottom: 0;
+    }
 
 	.columns {
 		font-size: 80%;

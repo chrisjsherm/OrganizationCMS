@@ -314,6 +314,7 @@
     <Content Include="Views\Organization.cshtml" />
     <Content Include="Views\Schedule.cshtml" />
     <Content Include="Views\PhotoGallery.cshtml" />
+    <Content Include="Views\FAQ.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

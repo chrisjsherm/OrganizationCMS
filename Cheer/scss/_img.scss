@@ -27,6 +27,12 @@
     }
 }
 
+.gallery-thumbs {
+    @extend .clearing-thumbs;
+
+    margin: emCalc(25px) 0;
+}
+
 $ratio-feature-image: percentage(1163/2000);
 $ratio-1-1: 100%;
 
