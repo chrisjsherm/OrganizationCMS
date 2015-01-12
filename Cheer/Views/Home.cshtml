@@ -2,7 +2,7 @@
 @{
     Layout = "_Layout.cshtml";
 }
-<div class="banner">
+<div class="banner" data-interchange="[@Umbraco.Field("BannerImageLarge"), (default)], [@Umbraco.Field("BannerImageSmall"), (small)], [@Umbraco.Field("BannerImageMedium"), (medium)], [@Umbraco.Field("BannerImageLarge"), (large)]">
     <div class="row">
         <div class="large-5 columns">
             <h1><span>@Umbraco.Field("BannerHeading")</span></h1>
