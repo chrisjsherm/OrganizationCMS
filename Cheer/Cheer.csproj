@@ -315,6 +315,8 @@
     <Content Include="Views\Schedule.cshtml" />
     <Content Include="Views\PhotoGallery.cshtml" />
     <Content Include="Views\FAQ.cshtml" />
+    <Content Include="scss\_heading.scss" />
+    <Content Include="scss\_shame.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

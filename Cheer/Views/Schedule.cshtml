@@ -37,11 +37,12 @@
 
 @helper PrintEvents(IQueryable<IPublishedContent> events)
 {
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
+    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
         @foreach (var item in events)
         {
             <li>
                 <div class="panel-box">
+
                     @if (item.HasValue("EventLogo"))
                     {
                         <img src="@item.GetPropertyValue("EventLogo")" />
@@ -59,6 +60,13 @@
                     <h6>
                         @item.GetPropertyValue("EventLocation")
                     </h6>
+
+                    @if (item.HasValue("EventPlacement"))
+                    {
+                        <p>
+                            @item.GetPropertyValue("EventPlacement")
+                        </p>
+                    }
 
                     @if (item.HasValue("AdditionalInformation"))
                     {
