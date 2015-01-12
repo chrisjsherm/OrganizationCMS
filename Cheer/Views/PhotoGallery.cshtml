@@ -47,7 +47,7 @@
                                 <a class="th" href="@photo.GetPropertyValue("PhotoFile")">
                                     <img data-caption="@photo.GetPropertyValue("PhotoCaption")"
                                          src="@photo.GetPropertyValue("PhotoFile").ToString().Replace(".", "_200.")"
-                                         height="100" width="100" />
+                                         width="100" />
                                 </a>
                             </li>
                         }
@@ -56,7 +56,10 @@
                 else
                 {
                     <p>
-                        No photos for this year.
+                        <a href="mailto:@Umbraco.Field("ContactEmail", recursive: true)?subject=Virginia Tech Competitive Cheerleading | Contact Us">
+                            Contact us
+                        </a>
+                        with your photos from this season.
                     </p>
                 }
             </div>
