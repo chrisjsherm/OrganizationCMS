@@ -35,13 +35,18 @@
 
 $ratio-feature-image: percentage(1163/2000);
 $ratio-1-1: 100%;
+$ratio-3-2: percentage(3/2); 
 
 .ratio-feature-image {
     padding-bottom: $ratio-feature-image;
 }
 
 .ratio-1-1 {
-    padding-bottom: 100%;
+    padding-bottom: $ratio-1-1;
+}
+
+.ratio-2-3 {
+    padding-bottom: $ratio-3-2;
 }
 
 .feature-image {

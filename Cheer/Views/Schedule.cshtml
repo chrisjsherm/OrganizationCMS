@@ -45,7 +45,9 @@
 
                     @if (item.HasValue("EventLogo"))
                     {
-                        <img src="@item.GetPropertyValue("EventLogo")" />
+                        <div class="img-container ratio-1-1">
+                            <img src="@item.GetPropertyValue("EventLogo")" />
+                        </div>
                     }
                     <h4>
                         @item.GetPropertyValue("EventName")
