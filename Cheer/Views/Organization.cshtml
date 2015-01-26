@@ -9,7 +9,9 @@
     <div class="small-12 large-12 columns">
         @{
             var members = Umbraco.TypedContentAtXPath("//OrganizationMember")
-                .Where(m => m.GetPropertyValue<string>("Position") != "Coach");
+                .Where(m => m.GetPropertyValue<string>("Position") != "Coach")
+                .OrderBy(m => m.GetPropertyValue("LastName"))
+                    .ThenBy(m => m.GetPropertyValue("FirstName"));
         }
 
         <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
