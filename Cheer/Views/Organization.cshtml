@@ -3,9 +3,7 @@
     Layout = "_Layout.cshtml";
 }
 
-@{ Html.CachedPartial("PageHeading", Model,
-       Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["cachedPartialExpiration"]),
-       cacheByPage: true); }
+@{ Html.RenderPartial("PageHeading"); }
 
 <div class="row">
     <div class="small-12 large-12 columns">
