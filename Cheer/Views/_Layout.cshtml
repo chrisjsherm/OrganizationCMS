@@ -43,7 +43,7 @@
 
     </script>
 
-    @{ Html.RenderPartial("NavigationBar"); }
+    @{ Html.CachedPartial("NavigationBar", Model, , Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["cachedPartialExpiration"])); }
 
     <section class="main-content">
         @RenderBody()
@@ -72,7 +72,7 @@
     </div>
 
 
-    @{ Html.RenderPartial("Footer"); }
+    @{ Html.CachedPartial("Footer", Model, , Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["cachedPartialExpiration"])); }
 
     @Scripts.Render("~/scripts/vendor")
 </body>

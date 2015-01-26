@@ -3,7 +3,9 @@
     Layout = "_Layout.cshtml";
 }
 
-@{ Html.RenderPartial("PageHeading"); }
+@{ Html.CachedPartial("PageHeading", Model,
+       Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["cachedPartialExpiration"]),
+       cacheByPage: true); }
 
 @{
     /* Umbraco advised method for accessing drop down values
