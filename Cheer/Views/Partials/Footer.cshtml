@@ -48,7 +48,7 @@
 
     <div class="row copyright">
         <div class="small-12 medium-6 large-6 columns">
-            @Umbraco.Field("copyright", recursive: true)<br>
+            &copy; @DateTime.Now.Year @Umbraco.Field("siteName", recursive: true), All Rights Reserved.<br>
         </div>
         <div class="medium-6 large-6 columns hide-for-small text-right">
             Developed by <a href="http://shermandigital.com/">Chris Sherman</a>
