@@ -28,7 +28,10 @@
                                     </div>
                                 }
                                 <h5 class="text-center">
-                                    @item.GetPropertyValue("FirstName") @item.GetPropertyValue("LastName")
+                                    @item.GetPropertyValue("FirstName")
+                                </h5>
+                                <h5 class="text-center subtitle">
+                                    @item.GetPropertyValue("LastName")
                                 </h5>
 
                                 @if (item.HasValue("HomeTown"))
