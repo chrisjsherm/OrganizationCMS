@@ -21,7 +21,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>857134d0</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>3531a4d0</NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/06a6b17f-f9c1-4db0-ba43-ef22128458b3/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/Cheer</ApplicationInsightsResourceId>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>

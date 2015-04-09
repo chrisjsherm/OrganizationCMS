@@ -16,21 +16,32 @@
             var pastEvents = Model.Content.Children
                 .Where("EventStartDate < DateTime.Now.Date")
                 .OrderByDescending(e => e.GetPropertyValue("EventStartDate"));
+                
+            var upcomingEventsCount = upcomingEvents.Count();
+            var pastEventsCount = pastEvents.Count();
 
         }
 
-        @if (upcomingEvents.Count() > 0)
+        @if (upcomingEventsCount > 0)
         {
             <h3>Upcoming Events</h3>
 
             @PrintEvents(upcomingEvents)
         }
 
-        @if (pastEvents.Count() > 0)
+        @if (pastEventsCount > 0)
         {
             <h3>Past Events</h3>
 
             @PrintEvents(pastEvents)
+        }
+        
+        @if (upcomingEventsCount == 0 &&
+            pastEventsCount == 0)
+        {
+            <h3>
+                Add some exciting events
+            </h3>
         }
     </div>
 </div>

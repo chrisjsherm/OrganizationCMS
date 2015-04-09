@@ -14,35 +14,44 @@
                     .ThenBy(m => m.GetPropertyValue("FirstName"));
         }
 
-        <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
-            @foreach (var item in members)
-            {
-                <li>
-                    <div class="panel-box">
-                        <div class="row">
-                            <div class="large-12 columns">
-                                @if (item.HasValue("ProfilePhoto"))
-                                {
-                                    <div class="img-container ratio-2-3">
-                                        <img src="@item.GetPropertyValue("ProfilePhoto")" />
-                                    </div>
-                                }
-                                <h5 class="text-center">
-                                    @item.GetPropertyValue("FirstName")
-                                </h5>
-                                <h5 class="text-center subtitle">
-                                    @item.GetPropertyValue("LastName")
-                                </h5>
+        @if (members.Count() > 0)
+        {
+            <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
+                @foreach (var item in members)
+                {
+                    <li>
+                        <div class="panel-box">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    @if (item.HasValue("ProfilePhoto"))
+                                    {
+                                        <div class="img-container ratio-2-3">
+                                            <img src="@item.GetPropertyValue("ProfilePhoto")" />
+                                        </div>
+                                    }
+                                    <h5 class="text-center">
+                                        @item.GetPropertyValue("FirstName")
+                                    </h5>
+                                    <h5 class="text-center subtitle">
+                                        @item.GetPropertyValue("LastName")
+                                    </h5>
 
-                                @if (item.HasValue("HomeTown"))
-                                {
-                                    <p class="text-center">@item.GetPropertyValue("HomeTown")</p>
-                                }
+                                    @if (item.HasValue("HomeTown"))
+                                    {
+                                        <p class="text-center">@item.GetPropertyValue("HomeTown")</p>
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            }
-        </ul>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <h3>
+                Let us know who makes up your organization
+            </h3>
+        }
     </div>
 </div>
